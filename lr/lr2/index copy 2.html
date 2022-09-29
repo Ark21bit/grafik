@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="400" height="400" id="myChart"></canvas>
+    <script src="Chart.min.js"></script>
+    <script>
+        let ctx = document.getElementById('myChart').getContext('2d');
+        let chart = new Chart(ctx,{
+            type: 'line',
+            data:{
+                labels:['Январь', 'Февраль', 'Март', 'Апрель', 'Май',  'Июнь', 'Июль'],
+                datasets:[
+                    {
+                        label: 'График 1',
+                        backgroundColor: 'transparent',
+                        borderColor: 'green',
+                        data: [0, 10, 5, 2, 20, 30, 45]
+                    },
+                    {
+                        label: 'График 2',
+                        backgroundColor: 'transparent',
+                        borderColor: 'blue',
+                        data: [5, 3, 10, 30, 40, 20, 55]
+                    },
+                    {
+                        label: 'График 3',
+                        backgroundColor: 'transparent',
+                        borderColor: 'red',
+                        data: [15, 30, 17, 4, 14, 30, 52]
+                    }
+                ]
+            }
+        });
+    </script>
+        
+</body>
+</html>

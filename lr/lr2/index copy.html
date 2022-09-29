@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="500" height="500" id="canvas"></canvas>
+    <script>
+        let data = [100, 68, 20, 30, 100 ];
+        let canvas = document.getElementById('canvas');
+        let c = canvas.getContext('2d');
+
+        c.fillStyle = "white";
+        c.fillRect(0, 0, 500, 500);
+
+        let colors = ["orange", "green", "blue", "yellow", "teal"];
+
+        let total = 0;
+         for (let i = 0; i < data.length; i++) {
+            total += data[i];            
+         }
+
+         let prevAngle = 0;
+
+         for (let i = 0; i < data.length; i++) {
+            let fraction = data[i]/total;
+            let angle = prevAngle + fraction * Math.PI*2;
+
+           /*  c.fillStyle = colors[i]; */
+
+            let grad = c.createRadialGradient(250, 250, 10, 250, 250, 100);
+            grad.addColorStop(0, "white");
+            grad.addColorStop(1, colors[i]);
+            c.fillStyle = grad;
+
+            c.beginPath();
+            c.moveTo(250, 250);
+            c.arc(250, 250, 100, prevAngle, angle, false);
+            c.lineTo(250, 250);
+            c.fill();
+            c.strokeStyle = "black";
+            c.stroke();
+            prevAngle = angle;            
+         }
+
+        
+               
+    </script>
+</body>
+</html>

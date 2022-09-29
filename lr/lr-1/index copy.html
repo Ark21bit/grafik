@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="800" height="600" id="canvas" ></canvas>
+    <script>
+        let canvas = document.getElementById('canvas');
+        let c = canvas.getContext('2d');
+        
+        c.fillStyle = "blue"
+        c.strokeStyle = "white"
+        c.beginPath();
+        c.moveTo(10,30);
+        c.bezierCurveTo(50, 90, 159, -30, 200 ,30)
+        c.lineTo(200, 90);       
+        c.lineTo(10, 90); 
+        c.closePath();
+        c.fill();
+        c.lineWidth = 4;
+        c.stroke();      
+    </script>
+</body>
+</html>
