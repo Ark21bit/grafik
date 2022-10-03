@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /* canvas{
+        width: 100%;
+        height: 100vh;
+       } */
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="1000" height="400"></canvas>
+    <script>
+        const ctx = document.getElementById('canvas').getContext('2d');
+        /* let img = new Image();
+        img.src = "img.jpg";
+        img.onload = function() {
+            let pat1 = ctx.createPattern(img, 'repeat');
+            ctx.fillStyle = pat1;
+            ctx.fillRect(0,0,100,100);
+            let pat2 = ctx.createPattern(img, 'repeat-y');
+            ctx.fillStyle = pat2;
+            ctx.translate(200,0);
+            ctx.fillRect(0,0,100,100);
+        }; */
+        
+        /* ctx.fillStyle = 'red';
+        ctx.globalAlpha = 50/100;
+        ctx.fillRect(0,0,50,50);
+        ctx.globalAlpha = 30/100;
+        ctx.fillRect(25,25,50,50);
+        ctx.globalAlpha = 1 */
+
+        /* let data = [100, 68, 20, 30, 100 ];
+        ctx.fillStyle = 'red';
+        for (let i = 0; i < data.length; i++) {
+            let dp = data[i];
+            ctx.translate(100,0);
+            ctx.fillRect(0,0,50, dp);            
+        } */
+
+        /* ctx.fillStyle = 'red';
+        ctx.translate(50,50);
+        let rads = 30 * Math.PI*2/360;
+        ctx.rotate(rads);
+        ctx.fillRect(0,0,100,100); */
+
+        /* ctx.fillStyle = 'red';
+        ctx.fillRect(0,0,400,100);
+        ctx.beginPath();
+        ctx.moveTo(200,50);
+        ctx.lineTo(250,150);
+        ctx.lineTo(150,150);
+        ctx.closePath();
+        ctx.lineWidth = 10;
+        ctx.stroke();
+        ctx.clip();
+        ctx.fillStyle = "yellow";
+        ctx.fillRect(0,0,400,100);  */
+
+        let img = new Image();
+        img.src = "i.webp";
+        img.onload = function() {
+            let rads = -30 * Math.PI*2/360;
+            ctx.rotate(rads);
+            ctx.drawImage(img, 0, 150, 200, 150);
+        }; 
+
+        ctx.fillStyle = "#000000";
+        ctx.font = "" + 16 + "pt Arial";
+        ctx.fillText("Онлайн школа программирования", 330, 165) 
+
+    </script>
+</body>
+</html>
