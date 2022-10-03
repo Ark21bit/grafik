@@ -16,7 +16,7 @@
     <canvas id="canvas" width="1000" height="400"></canvas>
     <script>
         const ctx = document.getElementById('canvas').getContext('2d');
-        /* let img = new Image();
+        let img = new Image();
         img.src = "img.jpg";
         img.onload = function() {
             let pat1 = ctx.createPattern(img, 'repeat');
@@ -26,7 +26,7 @@
             ctx.fillStyle = pat2;
             ctx.translate(200,0);
             ctx.fillRect(0,0,100,100);
-        }; */
+        };
         
         /* ctx.fillStyle = 'red';
         ctx.globalAlpha = 50/100;
@@ -62,17 +62,16 @@
         ctx.fillStyle = "yellow";
         ctx.fillRect(0,0,400,100);  */
 
-        let img = new Image();
+        /* let img = new Image();
         img.src = "i.webp";
         img.onload = function() {
             let rads = -30 * Math.PI*2/360;
             ctx.rotate(rads);
             ctx.drawImage(img, 0, 150, 200, 150);
         }; 
-
         ctx.fillStyle = "#000000";
         ctx.font = "" + 16 + "pt Arial";
-        ctx.fillText("Онлайн школа программирования", 330, 165) 
+        ctx.fillText("Онлайн школа программирования", 330, 165)  */
 
     </script>
 </body>
